@@ -1,18 +1,20 @@
 package com.msaure;
 
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.link.Link;
 
 public class HomePage extends WebPage {
-	private static final long serialVersionUID = 1L;
 
-	public HomePage(final PageParameters parameters) {
-		super(parameters);
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
 
-		// add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
+        add(new Link("newProject") {
 
-		// TODO Add your page's components here
-
-	}
+            @Override
+            public void onClick() {
+                setResponsePage(CreateProjectPage.class);
+            }
+        });
+    }
 }

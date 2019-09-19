@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>rmtdev</title>
+		<style type="text/css" media="screen">
+			#parent {
+				width: 50%;
+				height: 600px;
+				display: inline-block;
+				position: relative;
+			}
+			#editor {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Online Editor</h1>
+
+		<div>
+			Projects | Files | New
+		</div>
+		<div id="parent">
+			<div id="editor">function foo(items) {
+	var x = "All this is syntax highlighted";
+	return x;
+}
+			</div>
+		</div>
+		<script src="res/ace9/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var editor = ace.edit("editor");
+			editor.setTheme("ace/theme/chrome");
+			editor.session.setMode("ace/mode/javascript");
+		</script>
+	</body>
+</html>
